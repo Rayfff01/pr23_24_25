@@ -18,10 +18,8 @@ public class PasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
 
-        // Пропустить
         findViewById(R.id.btn_skip).setOnClickListener(v -> goNext());
 
-        // Строим точки
         LinearLayout dotsContainer = findViewById(R.id.dots_password);
         float density = getResources().getDisplayMetrics().density;
         int sizePx = (int) (14 * density);
@@ -37,7 +35,6 @@ public class PasswordActivity extends AppCompatActivity {
             dotViews[i] = dot;
         }
 
-        // Клавиши
         int[] keyIds = {R.id.pk_1, R.id.pk_2, R.id.pk_3, R.id.pk_4,
                 R.id.pk_5, R.id.pk_6, R.id.pk_7, R.id.pk_8,
                 R.id.pk_9, R.id.pk_0};
@@ -47,12 +44,11 @@ public class PasswordActivity extends AppCompatActivity {
             final String val = keyVals[i];
             TextView key = findViewById(keyIds[i]);
             key.setOnClickListener(v -> {
-                // Сброс предыдущей активной кнопки
                 if (lastPressed != null) {
                     lastPressed.setBackground(getDrawable(R.drawable.bg_pin_key));
                     lastPressed.setTextColor(0xFF000000);
                 }
-                // Подсветить нажатую
+
                 key.setBackground(getDrawable(R.drawable.bg_pin_key_active));
                 key.setTextColor(0xFFFFFFFF);
                 lastPressed = key;

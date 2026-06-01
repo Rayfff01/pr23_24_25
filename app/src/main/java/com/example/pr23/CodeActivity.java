@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CodeActivity extends AppCompatActivity {
 
-    private final String CORRECT_CODE = "1234"; // код для проверки
+    private final String CORRECT_CODE = "1234";
     private StringBuilder entered = new StringBuilder();
     private TextView[] cells;
     private CountDownTimer timer;
@@ -28,7 +28,6 @@ public class CodeActivity extends AppCompatActivity {
         TextView tvTimer = findViewById(R.id.tv_timer);
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 
-        // Таймер 60 секунд
         timer = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long ms) {
@@ -48,7 +47,6 @@ public class CodeActivity extends AppCompatActivity {
             }
         }.start();
 
-        // Клавиши
         int[] keyIds = {R.id.key_1, R.id.key_2, R.id.key_3, R.id.key_4,
                 R.id.key_5, R.id.key_6, R.id.key_7, R.id.key_8,
                 R.id.key_9, R.id.key_0};
@@ -85,7 +83,6 @@ public class CodeActivity extends AppCompatActivity {
             startActivity(new Intent(this, PasswordActivity.class));
             finish();
         } else {
-            // Неверный код — очищаем
             entered.setLength(0);
             updateCells();
         }

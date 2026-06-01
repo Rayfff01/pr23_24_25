@@ -58,7 +58,6 @@ public class OnboardAdapter extends RecyclerView.Adapter<OnboardAdapter.OnboardV
                     i == currentPos ? R.drawable.dot_active : R.drawable.dot_inactive
             ));
 
-            // Клик по точке — переход на нужную страницу
             final int targetPage = i;
             dot.setOnClickListener(v -> viewPager.setCurrentItem(targetPage, true));
 

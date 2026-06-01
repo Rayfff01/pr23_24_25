@@ -18,7 +18,6 @@ public class AuthActivity extends AppCompatActivity {
         Button btnNext = findViewById(R.id.btn_next);
         Button btnYandex = findViewById(R.id.btn_yandex);
 
-        // Кнопка неактивна пока поле пустое
         btnNext.setEnabled(false);
 
         etEmail.addTextChangedListener(new TextWatcher() {
